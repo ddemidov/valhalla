@@ -9,6 +9,7 @@ option(BUILD_Thrust "Build the Thrust benchmark files" OFF)
 option(BUILD_BoostCompute "Build the Boost Compute benchmark files" OFF)
 option(BUILD_HSABolt "Build the HSA Bolt files" OFF)
 option(BUILD_TBB "Build the TBB files" OFF)
+option(BUILD_VexCL "Build the VexCL files" OFF)
 
 
 ADD_DEFINITIONS("-std=c++11")
@@ -32,4 +33,8 @@ endif()
 
 if (${BUILD_TBB})
     add_subdirectory(src/tbb)
+endif()
+
+if (${BUILD_VexCL})
+    add_subdirectory(src/vexcl)
 endif()
